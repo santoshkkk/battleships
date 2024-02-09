@@ -14,7 +14,10 @@ module.exports = {
       "path": false,
       "crypto": false,
       "stream": false,
-      "http": false
+      "http": false,
+      "fs": false,
+      "url": false,
+      "util": false
     }
   }
 };
