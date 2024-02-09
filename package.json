@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "test": "mocha",
+    "test": "node testScript.js",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
