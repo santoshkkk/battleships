@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server"
-    "test": "mocha"
+    "dev": "nodemon server",
+    "test": "mocha",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,8 @@
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
   }
 }
