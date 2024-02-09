@@ -7,4 +7,14 @@ module.exports = {
     filename: 'bundle.js'
   },
   // Add other configuration options as needed
+  resolve: {
+    fallback: {
+      "zlib": false,
+      "querystring": false,
+      "path": false,
+      "crypto": false,
+      "stream": false,
+      "http": false
+    }
+  }
 };
