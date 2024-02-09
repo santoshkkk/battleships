@@ -17,7 +17,10 @@ module.exports = {
       "http": false,
       "fs": false,
       "url": false,
-      "util": false
+      "util": false,
+      "net": false, // Add this line to resolve the 'net' module error
+      "string_decoder": false, // Add this line to resolve the 'string_decoder' module error
+      "buffer": false
     }
   }
 };
