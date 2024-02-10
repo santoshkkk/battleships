@@ -1,7 +1,7 @@
 # environment.yaml
 development:
-  url: "http://dev.example.com"
+  url: "http://google.com"
 qa:
-  url: "http://qa.example.com"
+  url: "http://gmail.com"
 production:
-  url: "http://prod.example.com"
+  url: "http://facebook.com"
