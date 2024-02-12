@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+        NEXUS_URL = 'http://13.201.188.247:8081/'
+        NEXUS_CREDENTIAL_ID = 'Nexus-Creds'
+       
+    }
     
     stages {
         stage('Record Trigger Branch') {
@@ -64,7 +69,25 @@ pipeline {
         stage('Push Artifact to Nexus Repo') {
             steps {
                 echo "Push Artifact to Nexus Repo"
-                // Add Nexus artifact push steps here
+               steps {
+                script {
+                    // Retrieve Nexus credentials from Jenkins credentials store
+                    def credentials = credentials(NEXUS_CREDENTIAL_ID)
+                    if (credentials == null) {
+                        error "Failed to retrieve Nexus credentials with ID: ${NEXUS_CREDENTIAL_ID}"
+                    }
+                    
+                    // Publish Node.js artifacts to Nexus using Nexus API
+                    sh "curl -v -u ${credentials.username}:${credentials.password} --upload-file ${NPM_PACKAGE_PATH} ${NEXUS_URL}/repository/npm-private"
+                }
+            }
+        }
+    }
+
+
+
+
+                
             }
         }
         
